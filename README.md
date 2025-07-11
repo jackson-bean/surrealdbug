@@ -1,3 +1,7 @@
+<div align="center">
+	<img src=".media/hero.png" alt="surrealdbug">
+</div>
+
 # SurrealDBug
 An embeddable widget containing a suite of tools for debugging frontend applications that use [SurrealDB](https://surrealdb.com).
 
