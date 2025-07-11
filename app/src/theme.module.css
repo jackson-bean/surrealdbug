@@ -2,27 +2,3 @@
     background: linear-gradient(135deg, var(--mantine-color-surreal-6), #9600FF);
     background-color: unset;
 }
-
-.listing-modal {
-	background-color: hsla(253, 21%, 13%, 0.5);
-	backdrop-filter: blur(12px);
-	-webkit-backdrop-filter: blur(12px);
-	border: 1px solid var(--surrealist-divider-color);
-
-	/* @include light {
-		background-color: white;
-	} */
-}
-
-.listing-body {
-	padding: 0;
-}
-
-.listing-search input {
-	font-size: 1.15rem;
-	background-color: unset !important;
-
-	&::placeholder {
-		color: var(--mantine-color-slate-4);
-	}
-}
