@@ -1,0 +1,25 @@
+{
+    "name": "entry",
+    "type": "module",
+    "private": true,
+    "scripts": {
+        "build": "bun scripts/build.ts",
+        "dev": "bun scripts/dev.ts"
+    },
+    "exports": {
+        ".": {
+            "import": "./src/index.ts"
+        },
+        "./dev": {
+            "import": "./src/index.dev.ts"
+        }
+    },
+    "devDependencies": {
+        "@types/bun": "latest",
+        "esbuild": "^0.25.6"
+    },
+    "peerDependencies": {
+        "surrealdb": "^1.3.2",
+        "typescript": "^5"
+    }
+}

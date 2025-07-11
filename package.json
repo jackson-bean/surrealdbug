@@ -1,0 +1,29 @@
+{
+    "name": "surrealdbug",
+    "version": "0.0.8",
+    "type": "module",
+    "author": "Jackson Bean",
+    "workspaces": [
+        "dev",
+        "entry",
+        "app"
+    ],
+    "files": [
+        "dist/index.css",
+        "dist/index.js",
+        "dist/index.d.ts"
+    ],
+    "types": "dist/index.d.ts",
+    "exports": {
+        ".": "./dist/index.js",
+        "./styles.css": "./dist/index.css"
+    },
+    "scripts": {
+        "build": "scripts/build.sh",
+        "dev": "scripts/dev.sh",
+        "format": "biome format --write"
+    },
+    "devDependencies": {
+        "@biomejs/biome": "2.0.6"
+    }
+}
