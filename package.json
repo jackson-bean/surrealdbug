@@ -1,8 +1,12 @@
 {
     "name": "surrealdbug",
-    "version": "0.0.8",
+    "version": "0.0.9",
     "type": "module",
     "author": "Jackson Bean",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jackson-bean/surrealdbug.git"
+    },
     "workspaces": [
         "dev",
         "entry",
