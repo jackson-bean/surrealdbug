@@ -13,7 +13,7 @@ Debugging queries within the context of an application that uses SurrealDB isn't
 ## Prerequisites
 - **NOTE: This tool is early in development.** I started this project for myself, so minimal testing has only been done using SurrealDB version **2.3.x**. Proper testing and adapters for varying database versions will be implemented as the project matures.
 - **NOTE: This tool is for development use only.** Exposing this proxy to the public would deem your database insecure.
-- **Your client application must be using the WebSocket RPC implementation** (ws:// | ws://). HTTP connections are not currently supported, however the client should still function if connected to the proxy.
+- **Your client application must be using the WebSocket RPC implementation** (ws:// | wss://). HTTP connections are not currently supported, however the client should still function if connected to the proxy.
 
 ## Quick Start
 - Ensure a SurrealDB instance is running.
