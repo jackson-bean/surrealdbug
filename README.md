@@ -17,7 +17,7 @@ Debugging queries within the context of an application that uses SurrealDB isn't
 
 ## Quick Start
 - Ensure a SurrealDB instance is running.
-- Run a SurrealDBug container providing your database url:
+- Run a SurrealDBug container, providing your database url:
 ```
 docker run -p 3000:3000 -e ENDPOINT="http://host.docker.internal:8000" jacksonbeandocker/surrealdbug
 ```
