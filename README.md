@@ -30,7 +30,7 @@ const surreal = new Surreal();
 surreal.connect("ws://localhost:8000");
 
 // New
-surreal.connect("ws://localhost:3000/proxy"); // <-- Make sure you connect to the "/proxy" endpoint.
+surreal.connect("ws://localhost:3000");
 ```
 - Access the web interface by navigating to the root of the server (http://localhost:3000 in my example), where you will see your client's queries being logged.
 

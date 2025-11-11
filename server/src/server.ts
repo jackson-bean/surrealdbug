@@ -178,7 +178,7 @@ export function serve(context: {
             },
 
             // Database proxy.
-            "/proxy/*": async (request, server) => {
+            "/rpc/*": async (request, server) => {
                 const body = await request.arrayBuffer();
                 const url = new URL(request.url);
                 const [_, path] = url.pathname.split("/proxy");
