@@ -1,0 +1,5 @@
+.root {
+    padding: var(--mantine-spacing-lg);
+    height: "100%";
+    overflow-y: auto;
+}

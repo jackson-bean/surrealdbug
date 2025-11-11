@@ -1,0 +1,50 @@
+html,
+body,
+#root {
+    height: 100%;
+    overscroll-behavior: none;
+    padding: 0;
+    margin: 0;
+}
+
+#root {
+    background-color: var(--mantine-color-slate-9);
+    overflow: hidden;
+}
+
+body {
+    font-weight: 500;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+}
+
+input::-ms-reveal,
+input::-ms-clear {
+    display: none;
+}
+
+input,
+textarea,
+*[contenteditable] {
+    user-select: text;
+    -webkit-user-select: text;
+}
+
+pre,
+code {
+    font-size: inherit;
+    background-color: var(--mantine-color-slate-7);
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-x: auto;
+    max-width: 100%;
+
+    @include light {
+        background-color: var(--mantine-color-slate-0);
+    }
+}
+
+a {
+    text-decoration: none;
+}
