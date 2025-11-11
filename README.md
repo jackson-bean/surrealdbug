@@ -1,13 +1,17 @@
 # SurrealDBug
 SurrealDBug is a proxy used to analyze/debug traffic sent between [SurrealDB](https://github.com/surrealdb/surrealdb) and its clients.
 
+<p align="center">
+    <img src="./.media/queries.gif" width="600">
+</p>
+
 ## Motivation
 Debugging queries within the context of an application that uses SurrealDB isn't incredibly straightforward without utilizing some form of wrapper. SurrealDBug is a drop-in solution to use rather than creating such a wrapper manually.
 
 ## Features
 - **Web UI** - A web interface is served alongside the proxy for convenience.
 - **Query history** - All queries and their responses from connected clients are logged and can be inspected.
-- **Client impersonation** - Connected clients can execute queries on behalf of other clients. For example, you can use Surrealist's robust interface to execute queries as if it were your running application. This is especially useful for debugging clients that authenticate as record users. See [Meta Queries](#meta-queries) for more details.
+- **Client impersonation** - Connected clients can execute queries on behalf of other clients. For example, you can use Surrealist's robust interface to execute queries as if it were your running application. This is especially useful for debugging clients that authenticate as record users. See the ['runas' Meta Query](#runas) for more details.
 - **Language-agnostic** - Any application (frontend, server-side, etc.) written in any language is able to connect with no extra configuration.
 
 ## Prerequisites
@@ -35,7 +39,7 @@ surreal.connect("ws://localhost:3000/proxy"); // <-- Make sure you connect to th
 - Access the web interface by navigating to the root of the server (http://localhost:3000 in my example), where you will see your client's queries being logged.
 
 ## Meta Queries
-Connected clients can interact with the proxy via queries using a set of "meta queries" provided by the proxy. Meta queries take the form of comments, and are prefixed with "__sdbug:"
+Connected clients can interact with the proxy via queries using a set of "Meta Queries" provided by the proxy. Meta Queries take the form of comments and begin with "__sdbug:"
 
 For example:
 ```
@@ -43,10 +47,12 @@ For example:
 ```
 Executing this query from a connected client would change its display name in the web ui.
 
-Below is a list of all current meta queries:
+### nickname
 - **__sdbug:nickname \<name>** - Changes the display name of the client. This makes it easier to distinguish between each client in the web ui, as by default their randomly-generated id's are displayed.
-- **__sdbug:runas \<id | nickname> \<query>** - Executes the provided query as another connected client as opposed to the current client. This is particularly useful for, for example, using Surrealist's editor to run queries on behalf of a frontend application. Example:
-```
-# __sdbug:runas Frontend
-select * from $auth;
-```
+
+<img src="./.media/meta-queries.gif" width="600">
+
+### runas
+- **__sdbug:runas \<id | nickname> \<query>** - Executes the provided query as another connected client as opposed to the current client. This is particularly useful for, for example, using Surrealist's editor to run queries on behalf of a frontend application.
+
+<img src="./.media/run-as.gif" width="600">
